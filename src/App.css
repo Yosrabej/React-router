@@ -1,0 +1,8 @@
+.AddButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+body {
+    background-color: black;
+}
