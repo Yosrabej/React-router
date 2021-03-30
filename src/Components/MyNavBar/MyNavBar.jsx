@@ -1,7 +1,7 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 function MyNavBar({ getRating, getSearch }) {
     const ratingChanged = (newRating) => {
         getRating(newRating);
@@ -12,8 +12,10 @@ function MyNavBar({ getRating, getSearch }) {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="#home">Movies App</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Trending</Nav.Link>
+                    <Link to="/" style={{ marginTop: "8px" }}>
+                        Movies
+                    </Link>
+
                     <Nav.Link href="#pricing">Log in / Register</Nav.Link>
                 </Nav>
                 <Form inline>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 function MovieCard({ el }) {
     return (
         <div>
@@ -10,26 +10,34 @@ function MovieCard({ el }) {
                     src={el.posterUrl}
                     style={{ width: "286px", height: "381px" }}
                 />
-                <Card.Body>
+                <Card.Body style={{ textAlign: "center" }}>
                     <Card.Title>{el.title}</Card.Title>
                     <Card.Text
                         className="description"
-                        style={{ height: "280px" }}
-                    >
-                        {el.description}
-                    </Card.Text>
+                        style={{ height: "30px" }}
+                    ></Card.Text>
                     <h1>{"⭐".repeat(el.rate)}</h1>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                >
                     <Button
                         variant="primary"
                         style={{
-                            marginLeft: "30%",
                             backgroundColor: "	#32CD32",
                             border: "none",
                         }}
                     >
                         Download
+                    </Button>
+                    <Button
+                        variant="primary"
+                        style={{
+                            backgroundColor: "	#32CD32",
+                            border: "none",
+                        }}
+                    >
+                        <Link to={`/details/${el.id}`}>View details</Link>
                     </Button>
                 </Card.Footer>
             </Card>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-function AddButton({ getMovies }) {
+function AddButton({ getMovies, movies }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
